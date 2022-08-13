@@ -1,0 +1,80 @@
+{
+ "actions": [],
+ "autoname": "format:{question_type}-####",
+ "creation": "2022-08-13 17:46:30.169077",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "question_type",
+  "question",
+  "option_1",
+  "option_2",
+  "option_3",
+  "option_4"
+ ],
+ "fields": [
+  {
+   "fieldname": "question_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Question Type",
+   "options": "Question Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "question",
+   "fieldtype": "Small Text",
+   "label": "Question",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.question_type == \"MCQ\"",
+   "fieldname": "option_1",
+   "fieldtype": "Data",
+   "label": "Option 1"
+  },
+  {
+   "depends_on": "eval: doc.question_type == \"MCQ\"",
+   "fieldname": "option_2",
+   "fieldtype": "Data",
+   "label": "Option 2"
+  },
+  {
+   "depends_on": "eval:doc.question_type==\"MCQ\"",
+   "fieldname": "option_3",
+   "fieldtype": "Data",
+   "label": "Option 3"
+  },
+  {
+   "depends_on": "eval:doc.question_type == \"MCQ\"",
+   "fieldname": "option_4",
+   "fieldtype": "Data",
+   "label": "Option 4"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-08-13 18:01:52.255218",
+ "modified_by": "Administrator",
+ "module": "Examination",
+ "name": "Question",
+ "name_case": "UPPER CASE",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
